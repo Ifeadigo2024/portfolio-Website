@@ -509,5 +509,6 @@
   .max-width {
     max-width: 70%;
     margin-left: 15%;
+    font-size: 0.5rem;
   }
 }
