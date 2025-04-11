@@ -58,48 +58,119 @@
   }
   
   /* Hero Section */
-  .img {
-    border-radius: 20px;
-  }
-
   #hero {
-    background: linear-gradient(to right, #000000, #5d5d5d);
-    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 100px 20px;
+    padding: 60px 20px;
+    min-height: 100vh;
+    color: white;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(-45deg, #0f0f0f, #1a1a1a, #00ffae, #091f36);
+    background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
+  }
+  #hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px;
+    min-height: 100vh;
+    color: white;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(-45deg, #0f0f0f, #1a1a1a, #0d6e4f, #091f36);
+    background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
   }
   
-  #hero h2 {
-    font-size: 40px;
-    margin-bottom: 10px;
+  @keyframes gradientMove {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
   
-  #hero h2 span {
-    font-weight: bold;
+  
+  .hero-img {
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    animation: zoomIn 5s ease-in-out infinite alternate;
   }
   
-  #hero p {
-    font-size: 18px;
-    margin-bottom: 30px;
+  .hero-img img {
+    width: 200px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
   }
   
-  .btn {
-    display: inline-block;
-    background: #fff;
-    color: #000000;
-    padding: 10px 25px;
-    border-radius: 50px;
+  .hero-text {
+    margin: 0;
+    animation: fadeInUp 1.5s ease-out;
+  }
+  
+  .hero-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .hero-text span {
+    color: #00ffae;
+  }
+  
+  .hero-text p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    color: #ccc;
+  }
+  
+  .hero-text .btn {
+    padding: 12px 24px;
+    background-color: #00ffae;
+    color: #000;
+    border-radius: 8px;
     text-decoration: none;
+    font-weight: bold;
     transition: background 0.3s ease;
   }
   
-  .btn:hover {
-    background: #e0e0e0;
+  .hero-text .btn:hover {
+    background-color: #00d69c;
   }
   
-  #about {
-    text-align: center;
+  @keyframes zoomIn {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.05);
+    }
   }
+  
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+    
   /* Sections */
   section h2 {
     font-size: 32px;
@@ -110,9 +181,10 @@
   section h2::after {
     content: "";
     display: flex;
-    width: 100%;
+    margin-left: 25%;
+    width: 50%;
     height: 2.5px;
-    background: #3c3c3c;
+    background: #00ffae;
     margin-top: 8px;
   }
   
@@ -153,6 +225,34 @@
   .project p {
     padding: 0 15px 20px;
   }
+
+  .drive-link {
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  .drive-link a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background-color: #f2f2f2;
+    color: #333;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+  }
+  
+  .drive-link a:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .drive-link img {
+    width: 24px;
+    height: 24px;
+  }
+  
   
   /* Skills */
   .skills-list {
@@ -265,6 +365,11 @@
   
   /* ====== Responsive for 414px x 896px (Mobile) ====== */
 @media (max-width: 680px) {
+    header {
+      padding: 0;
+      border-radius: 10%;
+      margin-top: -10px;
+    }
     .container2  {
         display: flex;
         flex-direction: row;
@@ -399,5 +504,10 @@
    .carousel-btn {
         font-size: 20px;
        padding: 8px 12px;
+  }
+
+  .max-width {
+    max-width: 70%;
+    margin-left: 15%;
   }
 }
