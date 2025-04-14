@@ -88,7 +88,7 @@
     color: white;
     overflow: hidden;
     position: relative;
-    background: linear-gradient(135deg, #02412d, #0c2e25, #25d366, #0e1f1b);
+    background: linear-gradient(135deg, #02412d, #0c2e25, #139041, #0e1f1b);
     background-size: 300% 300%;
     animation: gradientShift 12s ease infinite;
     box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.6);
