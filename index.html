@@ -27,14 +27,14 @@
 <!-- Hero Section -->
 <section class="hero" id="home">
     <video class="hero-video" autoplay muted loop>
-        <source src="https://assets.mixkit.co/videos/preview/mixkit-dramatic-city-at-night-500-large.mp4" type="video/mp4">
+        <source src="https://videos.pexels.com/video-files/4990231/4990231-sd_640_360_30fps.mp4" type="video/mp4">
     </video>
     <div class="hero-content">
         <div class="hero-image">
-            <img src="./assets/display-photo.jpg" alt="Profile" class="profile-image">
+            <img src="./assets/YOUNG.GRAPHIX-LOGO-REVAMP.jpg" alt="Profile" class="profile-image">
         </div>
-        <h1 class="hero-title">Bringing Your Vision to Life</h1>
-        <p class="hero-subtitle">Creative design and development solutions for bold brands</p>
+        <h1 class="hero-title">Turning Ideas into <span class="reality"> Reality</span></h1>
+        <p class="hero-subtitle">Creative design and development solutions <br> for bold brands</p>
         <a href="#projects" class="cta-button">View My Work</a>
     </div>
     <div class="scroll-indicator">
@@ -715,120 +715,120 @@
         }
 
 
-                        // Form submission for WhatsApp sending
-                const contactForm = document.getElementById('inquiry-form');
-                if (contactForm) {
-                    contactForm.addEventListener('submit', function(e) {
-                        e.preventDefault();
-                        
-                        // Get form values
-                        const name = document.getElementById('name').value;
-                        const projectType = document.getElementById('project-type').value;
-                        const message = document.getElementById('message').value;
-                        
-                        // Simple validation with visual feedback
-                        let isValid = true;
-                        
-                        if (!name) {
-                            document.getElementById('name').classList.add('error');
-                            isValid = false;
-                        } else {
-                            document.getElementById('name').classList.remove('error');
-                        }
-                        
-                        if (!projectType) {
-                            document.getElementById('project-type').classList.add('error');
-                            isValid = false;
-                        } else {
-                            document.getElementById('project-type').classList.remove('error');
-                        }
-                        
-                        if (!message) {
-                            document.getElementById('message').classList.add('error');
-                            isValid = false;
-                        } else {
-                            document.getElementById('message').classList.remove('error');
-                        }
-                        
-                        if (!isValid) {
-                            return;
-                        }
-                        
-                        // Create message body
-                        let messageBody = `New inquiry from ${name}\n\n`;
-                        messageBody += `Project Type: ${projectType}\n`;
-                        messageBody += `Message: ${message}\n`;
-                        
-                        // Create WhatsApp link
-                        const whatsappLink = `https://wa.me/+2349073018211?text=${encodeURIComponent(messageBody)}`;
-                        
-                        // Open WhatsApp
-                        window.location.href = whatsappLink;
-                        
-                        // Reset form after processing
-                        contactForm.reset();
-                    });
+                // Form submission for WhatsApp sending
+        const contactForm = document.getElementById('inquiry-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const name = document.getElementById('name').value;
+                const projectType = document.getElementById('project-type').value;
+                const message = document.getElementById('message').value;
+                
+                // Simple validation with visual feedback
+                let isValid = true;
+                
+                if (!name) {
+                    document.getElementById('name').classList.add('error');
+                    isValid = false;
+                } else {
+                    document.getElementById('name').classList.remove('error');
                 }
+                
+                if (!projectType) {
+                    document.getElementById('project-type').classList.add('error');
+                    isValid = false;
+                } else {
+                    document.getElementById('project-type').classList.remove('error');
+                }
+                
+                if (!message) {
+                    document.getElementById('message').classList.add('error');
+                    isValid = false;
+                } else {
+                    document.getElementById('message').classList.remove('error');
+                }
+                
+                if (!isValid) {
+                    return;
+                }
+                
+                // Create message body
+                let messageBody = `New inquiry from ${name}\n\n`;
+                messageBody += `Project Type: ${projectType}\n`;
+                messageBody += `Message: ${message}\n`;
+                
+                // Create WhatsApp link
+                const whatsappLink = `https://wa.me/+2349073018211?text=${encodeURIComponent(messageBody)}`;
+                
+                // Open WhatsApp
+                window.location.href = whatsappLink;
+                
+                // Reset form after processing
+                contactForm.reset();
+            });
+        }
 
 
                 document.addEventListener('DOMContentLoaded', function() {
-    const carouselTrack = document.querySelector('.carousel-track');
-    const clientCards = document.querySelectorAll('.client-card');
-    const prevButton = document.querySelector('.carousel-button.prev');
-    const nextButton = document.querySelector('.carousel-button.next');
-    
-    let cardWidth = clientCards[0].offsetWidth + 20; // Include margin
-    let position = 0;
-    
-    // Update card width on resize
-    window.addEventListener('resize', function() {
-        cardWidth = clientCards[0].offsetWidth + 20;
+        const carouselTrack = document.querySelector('.carousel-track');
+        const clientCards = document.querySelectorAll('.client-card');
+        const prevButton = document.querySelector('.carousel-button.prev');
+        const nextButton = document.querySelector('.carousel-button.next');
+        
+        let cardWidth = clientCards[0].offsetWidth + 20; // Include margin
+        let position = 0;
+        
+        // Update card width on resize
+        window.addEventListener('resize', function() {
+            cardWidth = clientCards[0].offsetWidth + 20;
+            updateCarousel();
+        });
+        
+        function updateCarousel() {
+            // Calculate how many cards to show based on screen size
+            let visibleCards = 1;
+            if (window.innerWidth > 992) visibleCards = 4;
+            else if (window.innerWidth > 768) visibleCards = 3;
+            else if (window.innerWidth > 576) visibleCards = 2;
+            
+            // Calculate max position
+            const maxPosition = Math.max(0, clientCards.length - visibleCards) * cardWidth;
+            
+            // Constrain position within limits
+            position = Math.min(position, maxPosition);
+            position = Math.max(position, 0);
+            
+            // Update transform
+            carouselTrack.style.transform = `translateX(-${position}px)`;
+        }
+        
+        // Set up button click handlers
+        prevButton.addEventListener('click', function() {
+            position = Math.max(position - cardWidth, 0);
+            carouselTrack.style.transform = `translateX(-${position}px)`;
+        });
+        
+        nextButton.addEventListener('click', function() {
+            let newPosition = position + cardWidth;
+            
+            // Calculate how many cards to show based on screen size
+            let visibleCards = 1;
+            if (window.innerWidth > 992) visibleCards = 4;
+            else if (window.innerWidth > 768) visibleCards = 3;
+            else if (window.innerWidth > 576) visibleCards = 2;
+            
+            const maxPosition = Math.max(0, clientCards.length - visibleCards) * cardWidth;
+            newPosition = Math.min(newPosition, maxPosition);
+            
+            position = newPosition;
+            carouselTrack.style.transform = `translateX(-${position}px)`;
+        });
+        
+        // Initialize carousel
         updateCarousel();
     });
-    
-    function updateCarousel() {
-        // Calculate how many cards to show based on screen size
-        let visibleCards = 1;
-        if (window.innerWidth > 992) visibleCards = 4;
-        else if (window.innerWidth > 768) visibleCards = 3;
-        else if (window.innerWidth > 576) visibleCards = 2;
-        
-        // Calculate max position
-        const maxPosition = Math.max(0, clientCards.length - visibleCards) * cardWidth;
-        
-        // Constrain position within limits
-        position = Math.min(position, maxPosition);
-        position = Math.max(position, 0);
-        
-        // Update transform
-        carouselTrack.style.transform = `translateX(-${position}px)`;
-    }
-    
-    // Set up button click handlers
-    prevButton.addEventListener('click', function() {
-        position = Math.max(position - cardWidth, 0);
-        carouselTrack.style.transform = `translateX(-${position}px)`;
-    });
-    
-    nextButton.addEventListener('click', function() {
-        let newPosition = position + cardWidth;
-        
-        // Calculate how many cards to show based on screen size
-        let visibleCards = 1;
-        if (window.innerWidth > 992) visibleCards = 4;
-        else if (window.innerWidth > 768) visibleCards = 3;
-        else if (window.innerWidth > 576) visibleCards = 2;
-        
-        const maxPosition = Math.max(0, clientCards.length - visibleCards) * cardWidth;
-        newPosition = Math.min(newPosition, maxPosition);
-        
-        position = newPosition;
-        carouselTrack.style.transform = `translateX(-${position}px)`;
-    });
-    
-    // Initialize carousel
-    updateCarousel();
-});
     </script>
 </body>
 </html>
