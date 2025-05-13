@@ -3,7 +3,7 @@
 :root {
     --black: #000000;
     --white: #FFFFFF;
-    --neon-green: #00FF9D;
+    --neon-green: #25e325;
     --electric-blue: #00FFFF;
     --deep-purple: #6A00FF;
     --gray-100: #F5F5F5;
@@ -170,7 +170,7 @@ nav.scrolled {
     position: relative;
     z-index: 2;
     max-width: 800px;
-    padding: 0 4rem;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -210,7 +210,7 @@ nav.scrolled {
     font-size: 5rem;
     margin-bottom: 0;
     letter-spacing: -3px;
-    animation: fadeInDown 1s ease-out;
+    animation: fadeInUp 1s ease-out;
 }
 
 .reality {
@@ -221,7 +221,7 @@ nav.scrolled {
     font-size: 1.5rem;
     margin-bottom: 2.5rem;
     font-weight: 300;
-    animation: fadeInUp 1s ease-out;
+    animation: fadeInUp 1.5s ease-out;
 }
 
 .cta-button {
@@ -238,6 +238,11 @@ nav.scrolled {
     text-decoration: none;
     letter-spacing: 1px;
     animation: fadeIn 1s ease-out;
+}
+
+.cta-button:hover {
+    background-color: #00FF9D;
+    border-radius: 20px;
 }
 
 @media (max-width: 576px) {
@@ -924,7 +929,7 @@ nav.scrolled {
 }
 
 .contact-info p {
-    margin-bottom: 2.5rem;
+    
     font-size: 1.1rem;
 }
 
@@ -932,6 +937,7 @@ nav.scrolled {
     display: flex;
     align-items: center;
     margin-bottom: 2rem;
+    margin-top: 2rem;
 }
 
 .info-item i {
@@ -1256,7 +1262,7 @@ footer {
     
     .hero-title {
         font-size: 2.2rem;
-        letter-spacing: -1px;
+        letter-spacing: 0px;
     }
     
     .hero-subtitle {
