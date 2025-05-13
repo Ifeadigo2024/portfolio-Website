@@ -1282,6 +1282,10 @@ footer {
         flex-direction: column;
         gap: 2rem;
     }
+
+    .footer-logo {
+        height: 60px;
+    }
 }
 
 /* Animation Classes */
