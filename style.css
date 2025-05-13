@@ -1283,7 +1283,7 @@ footer {
         gap: 2rem;
     }
 
-    .footer-logo {
+    .footer-logo img {
         height: 60px;
     }
 }
